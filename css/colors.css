@@ -28,12 +28,12 @@ GRADIENTS
 }
 
 .icon_wrap:hover,
-.nav-pills > li.active > a,
-.nav-pills > li.active > a:focus,
-.nav-pills > li.active > a:hover,
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover,
 .icon-wrapper:hover i,
 .grd1 {
-    color: #ffffff;
+    color: #B7A5CF;
     background: #db00ce;
     background: -moz-linear-gradient(left, #db00ce 0%, #2750ff 100%);
     background: -webkit-linear-gradient(left, #db00ce 0%, #2750ff 100%);
@@ -46,11 +46,11 @@ GRADIENTS
 .cac:hover,
 .features-right li:hover i,
 .features-left li:hover i,
-.nav-pills > li:hover > a,
-.nav-pills > li:focus > a,
-.nav-pills > li.active > a,
-.nav-pills > li.active > a:focus,
-.nav-pills > li.active > a:hover,
+.nav-pills>li:hover>a,
+.nav-pills>li:focus>a,
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover,
 .divider-bar,
 .owl-next:hover i,
 .owl-prev:hover i,
@@ -58,7 +58,7 @@ GRADIENTS
 .grd1:hover,
 .grd1:focus {
     background-position: 100px;
-    color: #ffffff;
+    color: #B7A5CF;
     background: #2750ff;
     background: -moz-linear-gradient(left, #2750ff 0%, #db00ce 100%);
     background: -webkit-linear-gradient(left, #2750ff 0%, #db00ce 100%);

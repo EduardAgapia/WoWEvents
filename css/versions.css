@@ -19,6 +19,7 @@
 
 -------------------------------------------------------------------*/
 
+
 /*------------------------------------------------------------------
     1. BARBER
 -------------------------------------------------------------------*/
@@ -32,7 +33,7 @@ body.barber_version .navbar-nav span {
 
 body.barber_version .sidebar-nav li:hover a {
     background: #bb9d52;
-	color: #ffffff;
+    color: #B7A5CF;
 }
 
 body.barber_version .lead strong,
@@ -48,16 +49,16 @@ GRADIENTS
 **************************************/
 
 body.barber_version .icon_wrap:hover,
-body.barber_version .nav-pills > li.active > a,
-body.barber_version .nav-pills > li.active > a:focus,
-body.barber_version .nav-pills > li.active > a:hover,
-body.barber_version .icon-wrapper:hover i{
-    color: #ffffff;
-    background: #bb9d52;   
+body.barber_version .nav-pills>li.active>a,
+body.barber_version .nav-pills>li.active>a:focus,
+body.barber_version .nav-pills>li.active>a:hover,
+body.barber_version .icon-wrapper:hover i {
+    color: #B7A5CF;
+    background: #bb9d52;
 }
 
 body.barber_version .grd1 {
-	color: #ffffff;
+    color: #B7A5CF;
     background: #111111;
 }
 
@@ -66,35 +67,35 @@ body.barber_version .icon_wrap,
 body.barber_version .dmtop:hover,
 body.barber_version .features-right li:hover i,
 body.barber_version .features-left li:hover i,
-body.barber_version .nav-pills > li:hover > a,
-body.barber_version .nav-pills > li:focus > a,
-body.barber_version .nav-pills > li.active > a,
-body.barber_version .nav-pills > li.active > a:focus,
-body.barber_version .nav-pills > li.active > a:hover,
+body.barber_version .nav-pills>li:hover>a,
+body.barber_version .nav-pills>li:focus>a,
+body.barber_version .nav-pills>li.active>a,
+body.barber_version .nav-pills>li.active>a:focus,
+body.barber_version .nav-pills>li.active>a:hover,
 body.barber_version .divider-bar,
 body.barber_version .owl-next:hover i,
 body.barber_version .owl-prev:hover i,
-body.barber_version .icon-wrapper:hover i:hover{
+body.barber_version .icon-wrapper:hover i:hover {
     background-position: 100px;
-    color: #ffffff;
+    color: #B7A5CF;
     background: #111111;
 }
 
 body.barber_version .grd1:hover,
 body.barber_version .grd1:focus {
-	color: #ffffff;
+    color: #B7A5CF;
     background: #bb9d52;
 }
 
-body.barber_version .cac:hover{
-	background: #bb9d52;
+body.barber_version .cac:hover {
+    background: #bb9d52;
 }
 
 body.barber_version .effect-1:after {
     box-shadow: 0 0 0 2px #bb9d52;
 }
 
-body.barber_version {    
+body.barber_version {
     overflow-x: hidden;
 }
 
@@ -102,7 +103,7 @@ body.barber_version .first-section .grd1 {
     border: 0 !important;
     padding: 17px 40px;
     font-size: 15px;
-	font-weight: 600;
+    font-weight: 600;
 }
 
 body.barber_version .container-fluid {
@@ -110,7 +111,8 @@ body.barber_version .container-fluid {
 }
 
 body.barber_version .section.lb {
-    background-color: #f9f9f9;
+    /* our guys backgroud color*/
+    background-color: #ffffff;
 }
 
 
@@ -122,17 +124,17 @@ body.barber_version .menuopener {
     left: 15px;
     background-color: #bb9d52;
     z-index: 111;
-    color: #fff !important;
+    color: #B7A5CF !important;
     width: 50px;
     height: 50px;
     display: none;
     line-height: 50px;
-	font-size: 24px;
+    font-size: 24px;
     text-align: center;
 }
 
-body.barber_version .menuopener:hover{
-	background-color: #111111;
+body.barber_version .menuopener:hover {
+    background-color: #111111;
 }
 
 body.barber_version #wrapper {
@@ -179,8 +181,8 @@ body.barber_version .contact_form .btn {
     border: 0 !important;
 }
 
-body.barber_version .contact_form .btn.subt{
-	background: #bb9d52;
+body.barber_version .contact_form .btn.subt {
+    background: #bb9d52;
 }
 
 body.barber_version .section.db,
@@ -216,7 +218,6 @@ body.barber_version .first-section h2 {
 
 /* Sidebar Styles */
 
-
 body.barber_version .container-fluid {
     padding-left: 30px;
     padding-right: 30px;
@@ -229,25 +230,25 @@ body.barber_version .logo-sidebar {
 
 body.barber_version .sidebar-nav li {
     line-height: 45px;
-	margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
 body.barber_version .sidebar-nav li a {
     display: block;
     text-decoration: none;
     color: #999999;
-	background-color: transparent;
-	font-weight: 600;
-	padding: 7px 17px 7px;
-	-webkit-border-radius: 10px;
-	-ms-border-radius: 10px;
-	border-radius: 10px;
-	line-height: 21px;
+    background-color: transparent;
+    font-weight: 600;
+    padding: 7px 17px 7px;
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+    line-height: 21px;
 }
 
 body.barber_version .sidebar-nav li a:hover {
     text-decoration: none;
-    color: #fff;
+    color: #B7A5CF;
 }
 
 body.barber_version .sidebar-nav li a:active,
@@ -280,14 +281,15 @@ body.barber_version hr.invis4 {
 
 body.barber_version .service-wrap {
     margin: 30px 0;
-	padding: 20px;
+    padding: 20px;
     display: block;
     position: relative;
     background: #ffffff;
-	-webkit-box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
-	box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
-	border-radius: 10px;
-	transition: all 1s ease-in-out;
+    /*Our service cards */
+    -webkit-box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
+    box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
+    border-radius: 10px;
+    transition: all 1s ease-in-out;
 }
 
 body.barber_version .service-wrap h4 {
@@ -317,10 +319,10 @@ body.barber_version .dev-list img {
 
 body.barber_version .dev-list .widget {
     padding: 30px;
-	margin-bottom: 30px;
-    border: 1px solid #ededed;
-	-webkit-box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
-	box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
+    margin-bottom: 30px;
+    border: 1px solid #B7A5CF;
+    -webkit-box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
+    box-shadow: 0px 5px 35px 0px rgba(148, 146, 245, 0.15);
 }
 
 body.barber_version .dev-list .widget h3 {
@@ -409,9 +411,9 @@ GRADIENTS
 body.building_version .btn-buy:hover,
 body.building_version .cac:hover,
 body.building_version .icon_wrap:hover,
-body.building_version .nav-pills > li.active > a,
-body.building_version .nav-pills > li.active > a:focus,
-body.building_version .nav-pills > li.active > a:hover,
+body.building_version .nav-pills>li.active>a,
+body.building_version .nav-pills>li.active>a:focus,
+body.building_version .nav-pills>li.active>a:hover,
 body.building_version .icon-wrapper:hover i,
 body.building_version .grd1 {
     color: #000 !important;
@@ -428,11 +430,11 @@ body.building_version .icon_wrap,
 body.building_version .dmtop:hover,
 body.building_version .features-right li:hover i,
 body.building_version .features-left li:hover i,
-body.building_version .nav-pills > li:hover > a,
-body.building_version .nav-pills > li:focus > a,
-body.building_version .nav-pills > li.active > a,
-body.building_version .nav-pills > li.active > a:focus,
-body.building_version .nav-pills > li.active > a:hover,
+body.building_version .nav-pills>li:hover>a,
+body.building_version .nav-pills>li:focus>a,
+body.building_version .nav-pills>li.active>a,
+body.building_version .nav-pills>li.active>a:focus,
+body.building_version .nav-pills>li.active>a:hover,
 body.building_version .divider-bar,
 body.building_version .owl-next:hover i,
 body.building_version .owl-prev:hover i,
@@ -469,14 +471,14 @@ body.building_version .header_style_01 {
     position: relative;
 }
 
-body.building_version .header_style_01 .navbar-default .navbar-nav > li > a {
+body.building_version .header_style_01 .navbar-default .navbar-nav>li>a {
     color: #ffffff !important;
 }
 
-body.building_version .header_style_01 .navbar-default .navbar-nav > li.active a,
-body.building_version .header_style_01 .navbar-default .navbar-nav > li:hover a,
-body.building_version .header_style_01 .navbar-default .navbar-nav > li:focus a,
-body.building_version .header_style_01 .navbar-default .navbar-nav > li:active a {
+body.building_version .header_style_01 .navbar-default .navbar-nav>li.active a,
+body.building_version .header_style_01 .navbar-default .navbar-nav>li:hover a,
+body.building_version .header_style_01 .navbar-default .navbar-nav>li:focus a,
+body.building_version .header_style_01 .navbar-default .navbar-nav>li:active a {
     color: #fcdb08 !important;
 }
 
