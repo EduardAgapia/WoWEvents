@@ -26,9 +26,10 @@
 
 body.barber_version .participate-wrap small,
 body.barber_version .message-box h4,
+body.barber_version .message-box h3,
 body.barber_version .customwidget li i,
 body.barber_version .navbar-nav span {
-    color: #424145 !important;
+    color: #FFD353 !important;
 }
 
 body.barber_version .sidebar-nav li:hover a {
@@ -112,13 +113,14 @@ body.barber_version .container-fluid {
 
 body.barber_version .section.lb {
     /* our guys backgroud color*/
-    background-color: #ffffff;
+    background-color: #101119;
 }
 
 
 /* Toggle Styles */
 
 body.barber_version .menuopener {
+    border-radius: 20em;
     position: absolute;
     top: 15px;
     left: 15px;
@@ -168,7 +170,7 @@ body.barber_version #sidebar-wrapper {
 body.barber_version .contact_form {
     background-color: #111111;
     border: 0;
-    border-bottom: 2px solid #1f1f1f !important;
+    border-bottom: 2px solid darkgoldenrod !important;
 }
 
 body.barber_version .contact_form .form-control {
@@ -261,6 +263,7 @@ body.barber_version .section-title h3 {
     padding: 10px 0 0;
     font-weight: bold;
     line-height: 1 !important;
+    color: #BB9D52;
 }
 
 body.barber_version .section-title small {
@@ -329,6 +332,7 @@ body.barber_version .dev-list .widget h3 {
     font-size: 21px;
     padding: 0 0 5px;
     margin: 0;
+    color: #BB9D52;
     line-height: 1 !important;
 }
 
@@ -504,6 +508,7 @@ body.building_version .first-section .btn {
 body.building_version .message-box h2 {
     font-weight: bold;
     text-transform: uppercase;
+    color: #ffc000;
 }
 
 body.building_version .dev-list .widget {
@@ -513,6 +518,7 @@ body.building_version .dev-list .widget {
 
 body.building_version .dev-list .widget h3 {
     display: inline-block;
+    color: #BB9D52;
     font-size: 18px;
     line-height: 1 !important;
     margin: 0 !important;
@@ -533,6 +539,7 @@ body.building_version .footer-social {
 
 body.building_version .message-box p {
     margin-bottom: 0;
+    color: #FFD353;
 }
 
 body.building_version .message-box p.lead {
@@ -545,6 +552,7 @@ body.building_version .btn-dark {
 }
 
 body.building_version .section-title h3 {
+    color: #BB9D52;
     font-weight: bold;
 }
 

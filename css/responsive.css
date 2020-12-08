@@ -57,7 +57,7 @@
     body.clinic_version .app_iphone_03 {
         right: -10%;
     }
-    .header_style_01 .navbar-default .navbar-nav > li > a {
+    .header_style_01 .navbar-default .navbar-nav>li>a {
         font-size: 14px;
     }
     .first-section .lead {
@@ -252,7 +252,7 @@
         opacity: 1;
         top: 0 !important;
     }
-    .header_style_01 .navbar-default .navbar-nav > li a {
+    .header_style_01 .navbar-default .navbar-nav>li a {
         padding: 10px 5px;
     }
     .first-section .col-md-6 {
@@ -341,69 +341,70 @@
     .first-section h2 {
         font-size: 32px;
     }
-	body.barber_version #sidebar-wrapper{
-		border-right: none;
-	}
-	body.barber_version .container-fluid{
-		padding: 0px;
-	}
-	body.barber_version .dev-list .widget{
-		padding: 20px;
-	}
-	body.barber_version .first-section h2 strong, body.barber_version .first-section h2{
-		font-size: 24px;
-	}
-	.cac h3{
-		padding: 30px 0;
-	}
-	.about-tab .nav-tabs{
-		padding: 20px 0px;
-	}
-	.about-tab .nav-tabs > li a{
-		font-size: 12px;
-	}
-	.big-tagline{
-		padding: 10px 15px;
-	}
-	.all-page-bar .title{
-		padding: 120px 0 60px 0;
-	}
-	.all-page-bar .title h1{
-		font-size: 30px;
-	}
-	body.barber_version .service-wrap h4{
-		clear: both;
-		margin-top: 20px;
-		display: inline-block;
-		font-size: 18px;
-	}
-	body.barber_version #wrapper.toggled .menuopener.fixed-menu{
-		position: fixed;
-		margin-left: 260px;
-	}
-	body.barber_version  .menuopener.fixed-menu{
-		position: fixed;
-		-ms-animation-name: fadeInDown;
-		-moz-animation-name: fadeInDown;
-		-op-animation-name: fadeInDown;
-		-webkit-animation-name: fadeInDown;
-		animation-name: fadeInDown;
-		-ms-animation-duration: 500ms;
-		-moz-animation-duration: 500ms;
-		-op-animation-duration: 500ms;
-		-webkit-animation-duration: 500ms;
-		animation-duration: 500ms;
-		-ms-animation-timing-function: linear;
-		-moz-animation-timing-function: linear;
-		-op-animation-timing-function: linear;
-		-webkit-animation-timing-function: linear;
-		animation-timing-function: linear;
-		-ms-animation-iteration-count: 1;
-		-moz-animation-iteration-count: 1;
-		-op-animation-iteration-count: 1;
-		-webkit-animation-iteration-count: 1;
-		animation-iteration-count: 1;
-	}
+    body.barber_version #sidebar-wrapper {
+        border-right: none;
+    }
+    body.barber_version .container-fluid {
+        padding: 0px;
+    }
+    body.barber_version .dev-list .widget {
+        padding: 20px;
+    }
+    body.barber_version .first-section h2 strong,
+    body.barber_version .first-section h2 {
+        font-size: 24px;
+    }
+    .cac h3 {
+        padding: 30px 0;
+    }
+    .about-tab .nav-tabs {
+        padding: 20px 0px;
+    }
+    .about-tab .nav-tabs>li a {
+        font-size: 12px;
+    }
+    .big-tagline {
+        padding: 10px 15px;
+    }
+    .all-page-bar .title {
+        padding: 120px 0 60px 0;
+    }
+    .all-page-bar .title h1 {
+        font-size: 30px;
+    }
+    body.barber_version .service-wrap h4 {
+        clear: both;
+        margin-top: 20px;
+        display: inline-block;
+        font-size: 18px;
+    }
+    body.barber_version #wrapper.toggled .menuopener.fixed-menu {
+        position: fixed;
+        margin-left: 260px;
+    }
+    body.barber_version .menuopener.fixed-menu {
+        position: fixed;
+        -ms-animation-name: fadeInDown;
+        -moz-animation-name: fadeInDown;
+        -op-animation-name: fadeInDown;
+        -webkit-animation-name: fadeInDown;
+        animation-name: fadeInDown;
+        -ms-animation-duration: 500ms;
+        -moz-animation-duration: 500ms;
+        -op-animation-duration: 500ms;
+        -webkit-animation-duration: 500ms;
+        animation-duration: 500ms;
+        -ms-animation-timing-function: linear;
+        -moz-animation-timing-function: linear;
+        -op-animation-timing-function: linear;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -ms-animation-iteration-count: 1;
+        -moz-animation-iteration-count: 1;
+        -op-animation-iteration-count: 1;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+    }
 }
 
 @media (max-width: 600px) {
@@ -430,6 +431,7 @@
     }
     .section-title h3 {
         font-size: 28px;
+        color: #BB9D52;
     }
     .portfolio-filter ul li .btn-dark {
         border: 0 !important;
@@ -451,76 +453,76 @@
         float: left;
         border: 0 solid #ededed;
     }
-	body.barber_version #sidebar-wrapper{
-		border-right: none;
-	}
-	body.barber_version .container-fluid{
-		padding: 0px;
-	}
-	body.barber_version .dev-list .widget{
-		padding: 20px;
-	}
-	.footer-social{
-		padding: 0 15px;
-	}
-	.message-box h2{
-		font-size: 24px;
-	}
-	body.barber_version .first-section h2 strong, body.barber_version .first-section h2{
-		font-size: 24px;
-	}
-	.cac h3{
-		padding: 30px 0;
-	}
-	.about-tab .nav-tabs{
-		padding: 20px 0px;
-	}
-	.about-tab .nav-tabs > li a{
-		font-size: 12px;
-	}
-	.big-tagline{
-		padding: 10px 15px;
-	}
-	.all-page-bar .title{
-		padding: 120px 0 60px 0;
-	}
-	.all-page-bar .title h1{
-		font-size: 30px;
-	}
-	body.barber_version .service-wrap h4{
-		clear: both;
-		margin-top: 20px;
-		display: inline-block;
-		font-size: 18px;
-	}
-	body.barber_version #wrapper.toggled .menuopener.fixed-menu{
-		position: fixed;
-		margin-left: 260px;
-	}
-	body.barber_version  .menuopener.fixed-menu{
-		position: fixed;
-		-ms-animation-name: fadeInDown;
-		-moz-animation-name: fadeInDown;
-		-op-animation-name: fadeInDown;
-		-webkit-animation-name: fadeInDown;
-		animation-name: fadeInDown;
-		-ms-animation-duration: 500ms;
-		-moz-animation-duration: 500ms;
-		-op-animation-duration: 500ms;
-		-webkit-animation-duration: 500ms;
-		animation-duration: 500ms;
-		-ms-animation-timing-function: linear;
-		-moz-animation-timing-function: linear;
-		-op-animation-timing-function: linear;
-		-webkit-animation-timing-function: linear;
-		animation-timing-function: linear;
-		-ms-animation-iteration-count: 1;
-		-moz-animation-iteration-count: 1;
-		-op-animation-iteration-count: 1;
-		-webkit-animation-iteration-count: 1;
-		animation-iteration-count: 1;
-	}
-	.parallax {
-		
-	}
+    body.barber_version #sidebar-wrapper {
+        border-right: none;
+    }
+    body.barber_version .container-fluid {
+        padding: 0px;
+    }
+    body.barber_version .dev-list .widget {
+        padding: 20px;
+    }
+    .footer-social {
+        padding: 0 15px;
+    }
+    .message-box h2 {
+        font-size: 24px;
+    }
+    body.barber_version .first-section h2 strong,
+    body.barber_version .first-section h2 {
+        font-size: 24px;
+    }
+    .cac h3 {
+        padding: 30px 0;
+    }
+    .about-tab .nav-tabs {
+        padding: 20px 0px;
+    }
+    .about-tab .nav-tabs>li a {
+        font-size: 12px;
+    }
+    .big-tagline {
+        padding: 10px 15px;
+    }
+    .all-page-bar .title {
+        padding: 120px 0 60px 0;
+    }
+    .all-page-bar .title h1 {
+        font-size: 30px;
+    }
+    body.barber_version .service-wrap h4 {
+        clear: both;
+        margin-top: 20px;
+        display: inline-block;
+        font-size: 18px;
+    }
+    body.barber_version #wrapper.toggled .menuopener.fixed-menu {
+        position: fixed;
+        margin-left: 260px;
+    }
+    body.barber_version .menuopener.fixed-menu {
+        border-radius: 20em;
+        position: fixed;
+        -ms-animation-name: fadeInDown;
+        -moz-animation-name: fadeInDown;
+        -op-animation-name: fadeInDown;
+        -webkit-animation-name: fadeInDown;
+        animation-name: fadeInDown;
+        -ms-animation-duration: 500ms;
+        -moz-animation-duration: 500ms;
+        -op-animation-duration: 500ms;
+        -webkit-animation-duration: 500ms;
+        animation-duration: 500ms;
+        -ms-animation-timing-function: linear;
+        -moz-animation-timing-function: linear;
+        -op-animation-timing-function: linear;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -ms-animation-iteration-count: 1;
+        -moz-animation-iteration-count: 1;
+        -op-animation-iteration-count: 1;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1;
+    }
+    .parallax {}
 }
