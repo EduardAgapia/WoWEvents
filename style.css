@@ -550,7 +550,7 @@ body.barber_version .sidebar-nav li a.active {
     display: block;
     position: relative;
     overflow: hidden;
-    padding: 70px 0;
+    padding: 40px 0;
 }
 
 .noover {
@@ -603,7 +603,7 @@ body.barber_version .sidebar-nav li a.active {
 }
 
 .first-section::before {
-    opacity: 0.5;
+    opacity: 0;
 }
 
 .first-section h2 {
@@ -1280,7 +1280,7 @@ body.barber_version .about-tab .nav-tabs>li a:hover {
 hr.hr1 {
     position: relative;
     margin: 60px 0;
-    border: 1px dashed #f2f3f5;
+    border: 1px dashed #bb9d52;
 }
 
 hr.hr2 {
