@@ -3,7 +3,7 @@
   transition: 0.3s;
   border-radius:  15px 15px 5px 5px; /* 5px rounded corners */
   width: 100%;
-  background-color: #E2D0B7;
+  background-color: #E2D0B7 !important;
   color: white;
   transition: 0.3s;
 }
