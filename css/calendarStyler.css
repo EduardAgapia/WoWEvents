@@ -23,6 +23,12 @@
   float: right;
 }
 
+hr.line
+{
+  border: 1px solid rgb(75, 77, 75);
+  box-shadow: 1px 1px 1px 1px rgba(98, 151, 82, 0.3);
+}
+
 .cardWrapper{
 padding-top: 3px;
 padding-bottom: 5px;
@@ -44,6 +50,6 @@ body{
   border-radius:  0px 0px 15px 15px;
   height: 5%;
   padding: 2%;
-  background: #555;
-  color: #f1f1f1;
+  background: #9de7b0;
+  color: #272323;
 }
