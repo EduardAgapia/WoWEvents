@@ -33,7 +33,7 @@
 
 </head>
 
-<body style="background-color: white !important;">
+<body style="background-color: rgb(233, 250, 226) !important;">
 
     <div id="fh5co-services" class="fh5co-section-gray">
 		<div class="container">
@@ -108,99 +108,55 @@
 							<p> 08:00 - 16:00</p>
 						</div>
 					</div>
-
-				</div>
-			</div>
-
-			
-		</div>
-	</div>
-
-    <div id="fh5co-gallery" class="fh5co-section-gray">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h2>Gallery</h2>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-				</div>
-			</div>
-			<div class="row row-bottom-padded-md">
-				<div class="col-md-12">
-					<ul id="fh5co-gallery-list">
-						
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-1.jpg); "> 
-						<a href="images/gallery-1.jpg">
-							<div class="case-studies-summary">
-								<h2>Two Glas of Juice</h2>
-							</div>
-						</a>
-					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-2.jpg); ">
-						<a href="#" class="color-2">
-							<div class="case-studies-summary">
-								<h2>Timer starts now!</h2>
-							</div>
-						</a>
-					</li>
-
-
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-3.jpg); ">
-						<a href="#" class="color-3">
-							<div class="case-studies-summary">
-								<h2>Beautiful sunset</h2>
-							</div>
-						</a>
-					</li>
-					<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-4.jpg); ">
-						<a href="#" class="color-4">
-							<div class="case-studies-summary">
-								<h2>Company's Conference Room</h2>
-							</div>
-						</a>
-					</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-5.jpg); ">
-							<a href="#" class="color-3">
-								<div class="case-studies-summary">
-									<h2>Useful baskets</h2>
-								</div>
-							</a>
-						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-6.jpg); ">
-							<a href="#" class="color-4">
-								<div class="case-studies-summary">
-									<h2>Skater man in the road</h2>
-								</div>
-							</a>
-						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-7.jpg); ">
-							<a href="#" class="color-4">
-								<div class="case-studies-summary">
-									<h2>Two Glas of Juice</h2>
-								</div>
-							</a>
-						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-8.jpg); "> 
-							<a href="#" class="color-5">
-								<div class="case-studies-summary">
-									<h2>Timer starts now!</h2>
-								</div>
-							</a>
-						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/gallery-9.jpg); ">
-							<a href="#" class="color-6">
-								<div class="case-studies-summary">
-									<h2>Beautiful sunset</h2>
-								</div>
-							</a>
-						</li>
-					</ul>		
 				</div>
 			</div>
 		</div>
 	</div>
+
+   <!-- <div class="container">
+	<div id="list" class="section">
+		<div class="item item1" style="height: 14em; width: 20em;">
+		<img src="images/forest1.jpg">
+		</div>
+		<div class="item item2" style="height: 26em; width: 20em;">
+			<img src="images/forest2.jpg"></div>
+		<div class="item item3" style="height: 8em; width: 20em;">
+			<img src="images/forest3.jpg"></div>
+		<div class="item item4" style="height: 14em; width: 20em;">
+			<img src="images/forest4.jpg"></div> -->
+		<!-- <div class="item item5" style="height: 8em; width: 20em;">
+			<img src="images/forest5.jpg"></div>
+		<div class="item item6" style="height: 18em; width: 20em;">
+			<img src="images/forest6.jpg"></div>
+		<div class="item item7" style="height: 16em;">
+			<img src="images/forest7.jpg"></div>
+		<div class="item item8" style="height: 12em;">
+			<img src="images/forest8.jpg"></div> -->
+	<!-- </div>		 -->
+<!-- </div> -->
+
+
+  <script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+	</script>
 
 </body>
 
