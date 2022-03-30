@@ -2,7 +2,7 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   border-radius:  15px 15px 15px 15px; /* 5px rounded corners */
   width: 100%;
-  background-color: #E2D0B7 !important;
+  background-color: rgb(192, 226, 177) !important;
   color: black;
   height: 20%;
 }
@@ -30,7 +30,7 @@ hr.line
 }
 
 .cardWrapper{
-padding-top: 3px;
+padding-top: 9px;
 padding-bottom: 5px;
 height: 22%;
 }
@@ -46,10 +46,13 @@ body{
 }
 
 .header {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   text-align: center;
   border-radius:  0px 0px 15px 15px;
   height: 5%;
-  padding: 2%;
-  background: #9de7b0;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-bottom: 3%;
+  background: rgb(192, 226, 177);
   color: #272323;
 }
