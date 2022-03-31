@@ -56,3 +56,9 @@ body{
   background: rgb(192, 226, 177);
   color: #272323;
 }
+
+.vertical {
+  margin-left: 2%;
+  border-left: 3px solid rgb(64, 117, 64);
+  height: 5%;
+}
