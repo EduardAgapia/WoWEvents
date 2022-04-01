@@ -1286,14 +1286,14 @@ form label {
 .feature-left .icon {
   float: left;
   margin-right: 5%;
-  width: 25px;
-  height: 25px;
-  background: rgb(248, 255, 240);
+  width: 54px;
+  height: 54px;
+  background: #fff;
   display: table;
   text-align: center;
   -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 7px 20px 1px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75);
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
