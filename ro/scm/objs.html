@@ -51,13 +51,14 @@
                                 background-color: rgb(122, 195, 122);
                                 overflow-x: hidden;
                                 transition: 0.5s;
-                                padding-top: 60px;
+                                padding-top: 20px;
                             }
 
                             .sidebar a {
-                                padding: 8px 8px 8px 32px;
+                                padding: 0px 0px 0px 32px;
+                                margin: -8px;
                                 text-decoration: none;
-                                font-size: 20px;
+                                font-size: 16px;
                                 color: black;
                                 display: block;
                                 transition: 0.3s;
@@ -81,7 +82,7 @@
                                 background-color: rgb(122, 195, 122);
                                 color: white;
                                 padding: 23px 6px;
-                                margin-top: 15px;
+                                margin-top: 5px;
                                 border: none;
                                 border-radius: 0px 25px 25px 0px;
                                 position: fixed;
@@ -99,7 +100,7 @@
                             /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
                             @media screen and (max-height: 450px) {
                                 .sidebar {
-                                    padding-top: 15px;
+                                    padding-top: 6px;
                                 }
 
                                 .sidebar a {
@@ -136,6 +137,7 @@
                             <a href="#" onclick="filterSelection('REBRICEA')"> Rebricea</a>
                             <hr>
                             <a href="#" onclick="filterSelection('TĂCUTA')">Tacuta</a>
+                            <hr>
                         </div>
 
                         <div id="main">
@@ -360,8 +362,8 @@
         open = false;
         function openNav() {
             if (this.open == false) {
-                document.getElementById("mySidebar").style.width = "150px";
-                document.getElementById("main").style.marginLeft = "150px";
+                document.getElementById("mySidebar").style.width = "120px";
+                document.getElementById("main").style.marginLeft = "120px";
                 open = true;
             } else {
                 document.getElementById("mySidebar").style.width = "0";
@@ -377,10 +379,10 @@
             open = false;
         }
 
+        filterSelection("all")
         function filterSelection(c) {
             var x, i;
             x = document.getElementsByClassName("filterDiv");
-            if (c == "all") c = "";
             for (i = 0; i < x.length; i++) {
                 w3RemoveClass(x[i], "show");
                 if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
