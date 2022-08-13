@@ -80,9 +80,10 @@
                                 cursor: pointer;
                                 background-color: rgb(122, 195, 122);
                                 color: white;
-                                padding: 10px 15px;
+                                padding: 23px 6px;
+                                margin-top: 15px;
                                 border: none;
-                                border-radius: 25px;
+                                border-radius: 0px 25px 25px 0px;
                                 position: fixed;
                             }
 
@@ -92,7 +93,7 @@
 
                             #main {
                                 transition: margin-left .5s;
-                                padding: 16px;
+                                padding: -5px;
                             }
 
                             /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -108,25 +109,37 @@
                         </style>
 
                         <div id="mySidebar" class="sidebar">
-                            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-                            <a href="#" onclick="filterSelection('Aroneanu')"> Aroneanu</a>
-                            <a href="#" onclick="filterSelection('CIORTEȘTI')"> Ciortesti</a>
-                            <a href="#" onclick="filterSelection('COMARNA')"> Comarna</a>
-                            <a href="#" onclick="filterSelection('COSTULENI')"> Costuleni</a>
+                            <a href="#" onclick="filterSelection('Aroneanu')">Aroneanu</a>
+                            <hr>
+                            <a href="#" onclick="filterSelection('CIORTEȘTI')">Ciortesti</a>
+                            <hr>
+                            <a href="#" onclick="filterSelection('COMARNA')">Comarna</a>
+                            <hr>
+                            <a href="#" onclick="filterSelection('COSTULENI')">Costuleni</a>
+                            <hr>
                             <a href="#" onclick="filterSelection('DOBROVĂȚ')">Dobrovat</a>
-                            <a href="#" onclick="filterSelection('GOLĂIEȘTI')"> Golaesti</a>
-                            <a href="#" onclick="filterSelection('PRISĂCANI')"> Prisacani</a>
-                            <a href="#" onclick="filterSelection('ȚUȚORA')"> Țutora</a>
-                            <a href="#" onclick="filterSelection('UNGHENI')"> Ungheni</a>
-                            <a href="#" onclick="filterSelection('CODĂEȘTI')"> Codaesti</a>
-                            <a href="#" onclick="filterSelection('DĂNEȘTI')"> Danesti</a>
-                            <a href="#" onclick="filterSelection('NEGREȘTI')"> Negresti</a>
+                            <hr>
+                            <a href="#" onclick="filterSelection('GOLĂIEȘTI')">Golaesti</a>
+                            <hr>
+                            <a href="#" onclick="filterSelection('PRISĂCANI')">Prisacani</a>
+                            <hr>
+                            <a href="#" onclick="filterSelection('ȚUȚORA')">Țutora</a>
+                            <hr>
+                            <a href="#" onclick="filterSelection('UNGHENI')">Ungheni</a>
+                            <hr>
+                            <a href="#" onclick="filterSelection('CODĂEȘTI')">Codaesti</a>
+                            <hr>
+                            <a href="#" onclick="filterSelection('DĂNEȘTI')">Danesti</a>
+                            <hr>
+                            <a href="#" onclick="filterSelection('NEGREȘTI')">Negresti</a>
+                            <hr>
                             <a href="#" onclick="filterSelection('REBRICEA')"> Rebricea</a>
-                            <a href="#" onclick="filterSelection('TĂCUTA')"> Tacuta</a>
+                            <hr>
+                            <a href="#" onclick="filterSelection('TĂCUTA')">Tacuta</a>
                         </div>
 
                         <div id="main">
-                            <button class="openbtn" onclick="openNav()">☰</button>
+                            <button class="openbtn" onclick="openNav()"></button>
                         </div>
 
                         <div class="filterDiv Bârnova">
@@ -344,14 +357,24 @@
     <script src="js/custom.js"></script>
 
     <script>
+        open = false;
         function openNav() {
-            document.getElementById("mySidebar").style.width = "150px";
-            document.getElementById("main").style.marginLeft = "150px";
+            if (this.open == false) {
+                document.getElementById("mySidebar").style.width = "150px";
+                document.getElementById("main").style.marginLeft = "150px";
+                open = true;
+            } else {
+                document.getElementById("mySidebar").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                open = false;
+            }
+
         }
 
         function closeNav() {
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("main").style.marginLeft = "0";
+            open = false;
         }
 
         function filterSelection(c) {
