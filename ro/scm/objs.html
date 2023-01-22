@@ -33,117 +33,120 @@
         <div id="page-content-wrapper">
             <div class="row">
                 <div class=" col-sm-1">
+                    <style>
+                        body {
+                            font-family: "Lato", sans-serif;
+                        }
 
-                    <div class="cardList">
+                        .sidebar {
+                            height: 100%;
+                            width: 0;
+                            position: fixed;
+                            z-index: 1;
+                            top: 0;
+                            left: 0;
+                            background-color: rgb(122, 195, 122);
+                            overflow-x: hidden;
+                            transition: 0.5s;
+                            padding-top: 20px;
+                        }
 
-                        <style>
-                            body {
-                                font-family: "Lato", sans-serif;
-                            }
+                        .sidebar a {
+                            padding: 0px 0px 0px 25px;
+                            margin: -8px;
+                            margin-right: 80px;
+                            text-align: center;
+                            text-decoration: none;
+                            font-size: 16px;
+                            color: black;
+                            display: block;
+                            transition: 0.3s;
+                        }
 
+                        .sidebar a:hover {
+                            color: #f1f1f1;
+                        }
+
+                        .sidebar .closebtn {
+                            position: absolute;
+                            top: 0;
+                            right: 25px;
+                            font-size: 26px;
+                            margin-left: 50px;
+                        }
+
+                        .openbtn {
+                            font-size: 20px;
+                            cursor: pointer;
+                            background-color: rgb(122, 195, 122);
+                            color: white;
+                            padding: 23px 6px;
+                            margin-top: 75px;
+                            border: none;
+                            border-radius: 0px 25px 25px 0px;
+                            position: fixed;
+                        }
+
+                        .openbtn:hover {
+                            background-color: #444;
+                        }
+
+                        #main {
+                            transition: margin-left .5s;
+                            padding: -5px;
+                        }
+
+                        /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+                        @media screen and (max-height: 450px) {
                             .sidebar {
-                                height: 100%;
-                                width: 0;
-                                position: fixed;
-                                z-index: 1;
-                                top: 0;
-                                left: 0;
-                                background-color: rgb(122, 195, 122);
-                                overflow-x: hidden;
-                                transition: 0.5s;
-                                padding-top: 20px;
+                                padding-top: 6px;
                             }
 
                             .sidebar a {
-                                padding: 0px 0px 0px 32px;
-                                margin: -8px;
-                                text-decoration: none;
-                                font-size: 16px;
-                                color: black;
-                                display: block;
-                                transition: 0.3s;
+                                font-size: 18px;
                             }
+                        }
+                    </style>
 
-                            .sidebar a:hover {
-                                color: #f1f1f1;
-                            }
+                    <div id="myBtnContainer" class="sidebar">
+                        <a class="btn active" onclick="filterSelection('all')">Arata tot</a>
+                        <hr>
+                        <a class="btn" onclick="filterSelection('Aroneanu')">Aroneanu</a>
+                        <hr>
+                        <a class="btn" onclick="filterSelection('CIORTEȘTI')">Ciortesti</a>
+                        <hr>
+                        <a class="btn" onclick="filterSelection('COMARNA')">Comarna</a>
+                        <hr>
+                        <a class="btn" onclick="filterSelection('COSTULENI')">Costuleni</a>
+                        <hr>
+                        <a class="btn" onclick="filterSelection('DOBROVĂȚ')">Dobrovat</a>
+                        <hr>
+                        <a class="btn" onclick="filterSelection('GOLĂIEȘTI')">Golăiești</a>
+                        <hr>
+                        <a class="btn" onclick="filterSelection('PRISĂCANI')">Prisacani</a>
+                        <hr>
+                        <a class="btn" onclick="filterSelection('ȚUȚORA')">Țutora</a>
+                        <hr>
+                        <a class="btn" onclick="filterSelection('UNGHENI')">Ungheni</a>
+                        <hr>
+                        <a class="btn" onclick="filterSelection('CODĂEȘTI')">Codaesti</a>
+                        <hr>
+                        <a class="btn" onclick="filterSelection('DĂNEȘTI')">Danesti</a>
+                        <hr>
+                        <a class="btn" onclick="filterSelection('NEGREȘTI')">Negresti</a>
+                        <hr>
+                        <a class="btn" onclick="filterSelection('REBRICEA')"> Rebricea</a>
+                        <hr>
+                        <a class="btn" onclick="filterSelection('TĂCUTA')">Tacuta</a>
+                        <hr>
+                    </div>
 
-                            .sidebar .closebtn {
-                                position: absolute;
-                                top: 0;
-                                right: 25px;
-                                font-size: 26px;
-                                margin-left: 50px;
-                            }
+                    <div id="main">
+                        <button class="openbtn" onclick="openNav()"></button>
+                    </div>
 
-                            .openbtn {
-                                font-size: 20px;
-                                cursor: pointer;
-                                background-color: rgb(122, 195, 122);
-                                color: white;
-                                padding: 23px 6px;
-                                margin-top: 5px;
-                                border: none;
-                                border-radius: 0px 25px 25px 0px;
-                                position: fixed;
-                            }
-
-                            .openbtn:hover {
-                                background-color: #444;
-                            }
-
-                            #main {
-                                transition: margin-left .5s;
-                                padding: -5px;
-                            }
-
-                            /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-                            @media screen and (max-height: 450px) {
-                                .sidebar {
-                                    padding-top: 6px;
-                                }
-
-                                .sidebar a {
-                                    font-size: 18px;
-                                }
-                            }
-                        </style>
-
-                        <div id="mySidebar" class="sidebar">
-                            <a href="#" onclick="filterSelection('Aroneanu')">Aroneanu</a>
-                            <hr>
-                            <a href="#" onclick="filterSelection('CIORTEȘTI')">Ciortesti</a>
-                            <hr>
-                            <a href="#" onclick="filterSelection('COMARNA')">Comarna</a>
-                            <hr>
-                            <a href="#" onclick="filterSelection('COSTULENI')">Costuleni</a>
-                            <hr>
-                            <a href="#" onclick="filterSelection('DOBROVĂȚ')">Dobrovat</a>
-                            <hr>
-                            <a href="#" onclick="filterSelection('GOLĂIEȘTI')">Golaesti</a>
-                            <hr>
-                            <a href="#" onclick="filterSelection('PRISĂCANI')">Prisacani</a>
-                            <hr>
-                            <a href="#" onclick="filterSelection('ȚUȚORA')">Țutora</a>
-                            <hr>
-                            <a href="#" onclick="filterSelection('UNGHENI')">Ungheni</a>
-                            <hr>
-                            <a href="#" onclick="filterSelection('CODĂEȘTI')">Codaesti</a>
-                            <hr>
-                            <a href="#" onclick="filterSelection('DĂNEȘTI')">Danesti</a>
-                            <hr>
-                            <a href="#" onclick="filterSelection('NEGREȘTI')">Negresti</a>
-                            <hr>
-                            <a href="#" onclick="filterSelection('REBRICEA')"> Rebricea</a>
-                            <hr>
-                            <a href="#" onclick="filterSelection('TĂCUTA')">Tacuta</a>
-                            <hr>
-                        </div>
-
-                        <div id="main">
-                            <button class="openbtn" onclick="openNav()"></button>
-                        </div>
-
+                    <div class="cardList"></div>
+                    <!-- 
                         <div class="filterDiv Bârnova">
                             <a href="objsPages/padureaBarnova.html">
                                 <div class="cardWrapper">
@@ -159,26 +162,29 @@
                                     </div>
                                 </div>
                             </a>
-                        </div>
+                        </div> -->
 
-                        <div class="filterDiv CIORTEȘTI">
-                            <a href="objsPages/padureaMiclesti.html">
-                                <div class="cardWrapper">
-                                    <div class="card">
-                                        <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
-                                        <img src="../../globalImages/scm/padureaMiclesti.png" class="image">
-                                        <div class="container">
-                                            <h4 style="margin-top: 7%;"><b>Pădurea Miclești</b></h4>
-                                            <div class="vertical">
-                                                <p style="margin-left: 6%; margin-top: 8%;">Comuna Ciortești</p>
-                                            </div>
+                    <!-- CIORTEȘTI -->
+                    <div class="filterDiv CIORTEȘTI">
+                        <a href="objsPages/ciortesti/padureaMiclesti.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/ciortesti/padureaMiclesti.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Pădurea Miclești</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Comuna Ciortești</p>
                                         </div>
                                     </div>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
+                    </div>
 
-                        <div class="filterDiv Bârnova">
+                    <!-- GOLĂIEȘTI -->
+
+                    <!-- <div class="filterDiv Bârnova">
                             <a href="objsPages/raulPrut.html">
                                 <div class="cardWrapper">
                                     <div class="card">
@@ -194,158 +200,1540 @@
                                     </div>
                                 </div>
                             </a>
-                        </div>
+                        </div> -->
 
-                        <div class="filterDiv GOLĂIEȘTI">
-                            <a href="objsPages/padureaMedeleni.html">
-                                <div class="cardWrapper">
-                                    <div class="card">
-                                        <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
-                                        <img src="../../globalImages/scm/padureaMedeleni.png" class="image">
-                                        <div class="container">
-                                            <h4 style="margin-top: 7%;"><b>Pădurea Medeleni</b></h4>
-                                            <div class="vertical">
-                                                <p style="margin-left: 6%; margin-top: 8%;">Comunele Golăiești și
-                                                    Victoria</p>
-                                            </div>
+                    <div class="filterDiv GOLĂIEȘTI">
+                        <a href="objsPages/golaiesti/padureaMedeleni.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/golaiesti/padureaMedeleni.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Pădurea Medeleni</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Comunele Golăiești și
+                                                Victoria</p>
                                         </div>
                                     </div>
                                 </div>
-                            </a>
-                        </div>
-
-                        <div class="filterDiv GOLĂIEȘTI">
-                            <a href="objsPages/faneturiGlodeni.html">
-                                <div class="cardWrapper">
-                                    <div class="card">
-                                        <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
-                                        <img src="../../globalImages/scm/faneturiGlodeni.png" class="image">
-                                        <div class="container">
-                                            <h4 style="margin-top: 7%;"><b>Fânațurile de la Glodeni</b></h4>
-                                            <div class="vertical">
-                                                <p style="margin-left: 6%; margin-top: 8%;">județul Vaslui</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <!-- gl;gsdhgksdjhglskdhgjklsd -->
-
-                        <div class="filterDiv Aroneanu">
-                            <a href="objsPages/bidSfNic.html">
-                                <div class="cardWrapper">
-                                    <div class="card">
-                                        <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
-                                        <img src="../../globalImages/scm/bisSfNic.png" class="image">
-                                        <div class="container">
-                                            <h4 style="margin-top: 7%;"><b>Biserica Sfântul Nicolae</b></h4>
-                                            <div class="vertical">
-                                                <p style="margin-left: 6%; margin-top: 8%;">Aroneanu, sat Aroneanu</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="filterDiv Aroneanu">
-                            <a href="objsPages/bisSfGh.html">
-                                <div class="cardWrapper">
-                                    <div class="card">
-                                        <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
-                                        <img src="../../globalImages/scm/bisSfGh.png" class="image">
-                                        <div class="container">
-                                            <h4 style="margin-top: 7%;"><b>Biserica Sfântul Gheorghe</b></h4>
-                                            <div class="vertical">
-                                                <p style="margin-left: 6%; margin-top: 8%;">Aroneanu, sat Dorobanț</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="filterDiv Aroneanu">
-                            <a href="objsPages/bisSfil.html">
-                                <div class="cardWrapper">
-                                    <div class="card">
-                                        <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
-                                        <img src="../../globalImages/scm/bisSfil.png" class="image">
-                                        <div class="container">
-                                            <h4 style="margin-top: 7%;"><b>Biserica Sfântul Ilie</b></h4>
-                                            <div class="vertical">
-                                                <p style="margin-left: 6%; margin-top: 8%;">Aroneanu, sat Rediu Aldei
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="filterDiv Aroneanu">
-                            <a href="objsPages/bisSfVar.html">
-                                <div class="cardWrapper">
-                                    <div class="card">
-                                        <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
-                                        <img src="../../globalImages/scm/bisSfVar.png" class="image">
-                                        <div class="container">
-                                            <h4 style="margin-top: 7%;"><b>Biserica Sfânta Varvara</b></h4>
-                                            <div class="vertical">
-                                                <p style="margin-left: 6%; margin-top: 8%;">Aroneanu, sat Șorogari</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="filterDiv Aroneanu">
-                            <a href="objsPages/lacDor.html">
-                                <div class="cardWrapper">
-                                    <div class="card">
-                                        <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
-                                        <img src="../../globalImages/scm/lacDor.png" class="image">
-                                        <div class="container">
-                                            <h4 style="margin-top: 7%;"><b>Lacul Dorobanț</b></h4>
-                                            <div class="vertical">
-                                                <p style="margin-left: 6%; margin-top: 8%;">Aroneanu, sat Dorobanț</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="filterDiv Aroneanu">
-                            <a href="objsPages/lacAr.html">
-                                <div class="cardWrapper">
-                                    <div class="card">
-                                        <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
-                                        <img src="../../globalImages/scm/lacAr.png" class="image">
-                                        <div class="container">
-                                            <h4 style="margin-top: 7%;"><b>Lacul Aroneanu</b></h4>
-                                            <div class="vertical">
-                                                <p style="margin-left: 6%; margin-top: 8%;">Aroneanu, sat Aroneanu</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
-
-                        <!-- gl;gsdhgksdjhglskdhgjklsd -->
-
+                            </div>
+                        </a>
                     </div>
+
+                    <div class="filterDiv GOLĂIEȘTI">
+                        <a href="objsPages/golaiesti/padureaIcuseni.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/golaiesti/padureaIcuseni.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Pădurea Icușeni</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Comuna Golăiești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv GOLĂIEȘTI">
+                        <a href="objsPages/golaiesti/faneturiGlodeni.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/golaiesti/faneturiGlodeni.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Fânațurile de la Glodeni</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">județul Vaslui</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Aroneanu -->
+
+                    <div class="filterDiv Aroneanu">
+                        <a href="objsPages/aroneanu/bisSfNic.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/aroneanu/bisSfNic.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sfântul Nicolae</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Aroneanu, sat Aroneanu</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv Aroneanu">
+                        <a href="objsPages/aroneanu/bisSfGh.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/aroneanu/bisSfGh.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sfântul Gheorghe</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Aroneanu, sat Dorobanț</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv Aroneanu">
+                        <a href="objsPages/aroneanu/bisSfil.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/aroneanu/bisSfil.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sfântul Ilie</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Aroneanu, sat Rediu Aldei
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv Aroneanu">
+                        <a href="objsPages/aroneanu/bisSfVar.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/aroneanu/bisSfVar.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sfânta Varvara</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Aroneanu, sat Șorogari</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv Aroneanu">
+                        <a href="https://www.google.com/maps/dir//47.22096,+27.58827/@47.216898,27.4985276,12z/data=!4m9!4m8!1m0!1m5!1m1!1s0x0:0x6fe4b14b2ed372b7!2m2!1d27.587546!2d47.2220121!3e0">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/aroneanu/lacDor.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Lacul Dorobanț</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Aroneanu, sat Dorobanț</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv Aroneanu">
+                        <a href="https://www.google.com/maps/dir//Aroneanu/@47.1956043,27.5585909,12.4z/data=!4m9!4m8!1m0!1m5!1m1!1s0x40cafce825bb3cf7:0xef3dea74da6d7a0a!2m2!1d27.5933585!2d47.2004014!3e0">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/aroneanu/lacAr.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Lacul Aroneanu</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Aroneanu, sat Aroneanu</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- CIORTEȘTI -->
+                    <div class="filterDiv CIORTEȘTI">
+                        <a href="objsPages/ciortesti/adventist.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/ciortesti/bisAdventista.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Adventistă</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Ciortești, sat Deleni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CIORTEȘTI">
+                        <a href="objsPages/ciortesti/bisAdorMD.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/ciortesti/bisAMD.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Adormirea Maicii Domnului</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Ciortești, sat Coropceni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CIORTEȘTI">
+                        <a href="objsPages/ciortesti/bamd.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/ciortesti/bisAMDSerbesti.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Adormirea Maicii Domnului</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Ciortești, sat Șerbești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CIORTEȘTI">
+                        <a href="objsPages/ciortesti/bisDeLemn.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/ciortesti/bisLemRotaria.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica de lemn din satul Rotăria</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Ciortești, sat Rotăria</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CIORTEȘTI">
+                        <a href="objsPages/ciortesti/bisSfProoilie.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/ciortesti/bisSfProoilie.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sfântul Prooroc Ilie</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Ciortești, sat Deleni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CIORTEȘTI">
+                        <a href="objsPages/ciortesti/bisTaiSfIoan.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/ciortesti/bisTaiSfIoan.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica cu hramul Tăierea Capului Sf. Ioan Botezătorul</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Ciortești, sat Ciortești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CIORTEȘTI">
+                        <a href="objsPages/ciortesti/bisVeche.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/ciortesti/bisVecheCiortesti.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Veche</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Ciortești, sat Ciortești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CIORTEȘTI">
+                        <a href="https://www.google.com/maps/dir//46.91776,+27.84826/@46.9178261,27.7779242,12z/data=!4m6!4m5!1m0!1m3!2m2!1d27.84826!2d46.91776">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/ciortesti/monEroi.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Monumentul eroilor</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Ciortești, sat Ciortești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- CODĂEȘTI -->
+                    <div class="filterDiv CODĂEȘTI">
+                        <a href="objsPages/codaesti/bisNasMD.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/codaesti/bisNasMD.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Nașterea Maicii Domnului</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Codăești, sat Pribești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CODĂEȘTI">
+                        <a href="https://www.google.com/maps/dir//46.82828,+27.70064/@46.8504923,27.5846706,12z/data=!4m6!4m5!1m0!1m3!2m2!1d27.70064!2d46.82828">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/codaesti/copac.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Stejar multisecular</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Codăești, în fostul sat al comunei, în
+                                                partea de sud al Dăneștiului, numit Ciorâța</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CODĂEȘTI">
+                        <a href="objsPages/codaesti/bisSfArch.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm//codaesti/bisSfArch.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica ortodoxă Sf. Mihail și Gavriil</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Codăești, sat Ghergheleu</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CODĂEȘTI">
+                        <a href="objsPages/codaesti/bisSfDumi.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/codaesti/bisSfDumi.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Dumitru</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Codăești, sat Rediu Galian</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CODĂEȘTI">
+                        <a href="objsPages/codaesti/bisSfIerarhi.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/codaesti/bisSfIerarhi.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Trei Ierarhi</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Codăești, sat Codăești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CODĂEȘTI">
+                        <a href="objsPages/codaesti/cimitir.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/codaesti/cimitir.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Cimitirul evreiesc Codăești</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Codăești, sat Codăești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CODĂEȘTI">
+                        <a href="objsPages/codaesti/conacRosetti.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/codaesti/conacRosetti.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Conac Rosetti-Balș</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Codăești, sat Pribești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CODĂEȘTI">
+                        <a href="objsPages/codaesti/manStCelMar.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/codaesti/manStCelMare.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Mănăstirea Ștefan cel Mare</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Codăești, sat Codăești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv CODĂEȘTI">
+                        <a href="objsPages/codaesti/pretura.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/codaesti/pretura.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Fosta Pretură</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Codăești, sat Codăești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- COMARNA -->
+                    <div class="filterDiv COMARNA">
+                        <a href="objsPages/comarna/bStanca.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/comarna/bStanca.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Izvorul Tămăduirii</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Comarna, sat Stânca</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv COMARNA">
+                        <a href="objsPages/comarna/bunaVestire.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/comarna/bunaVestire.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica ortodoxă Buna Vestire</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Comarna, sat Osoi</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv COMARNA">
+                        <a href="https://www.google.com/maps/dir//47.06984,+27.77114/@47.0697147,27.7008142,12z/data=!4m6!4m5!1m0!1m3!2m2!1d27.77114!2d47.06984">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/comarna/eroi.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Monumentul Eroilor din Comarna</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Comarna, sat Comarna</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv COMARNA">
+                        <a href="objsPages/comarna/sfImparati.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/comarna/sfImparati.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Împărați</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Comarna, sat Comarna</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <!-- COSTULENI -->
+                    <div class="filterDiv COSTULENI">
+                        <a href="objsPages/costuleni/arhangheli.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/costuleni/arhangheli.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sfinții Arhangheli</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Costuleni, sat Cozia</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv COSTULENI">
+                        <a href="objsPages/costuleni/cruce-cozia.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/costuleni/cruce-cozia.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Crucea eroilor de pe Dealul Movila</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Costuleni, sat Costuleni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv COSTULENI">
+                        <a href="objsPages/costuleni/parascheva.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/costuleni/parascheva.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Cuv. Parascheva</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Costuleni, sat Costuleni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- DĂNEȘTI -->
+                    <div class="filterDiv DĂNEȘTI">
+                        <a href="objsPages/danesti/bisSfGh.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/danesti/bisSfGh.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica cu hramul Sf. Mare Mucenic Gheorghe</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Dănești, sat Emil Racoviță</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv DĂNEȘTI">
+                        <a href="objsPages/danesti/bisSfNicBotoaia.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/danesti/bisSfNicBotoaia.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Nicolae</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Dănești, sat Boțoaia</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv DĂNEȘTI">
+                        <a href="objsPages/danesti/bisSfNicDanesti.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/danesti/bisSfNicDanesti.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Nicolae</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Dănești, sat Dănești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv DĂNEȘTI">
+                        <a href="objsPages/danesti/bisSfVoievozi.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/danesti/bisSfVoievozi.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Voievozi</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Dănești, sat Boțoaia</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv DĂNEȘTI">
+                        <a href="objsPages/danesti/bisTatarani.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/danesti/bisTatarani.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Ortodoxă din Tătărăni</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Dănești, sat Tătărăni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv DĂNEȘTI">
+                        <a href="objsPages/danesti/grigoreTpopa.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/danesti/grigoreTpopa.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Casa părintească a medicului Grigore T. Popa</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Dănești, sat Emil Racoviță</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv DĂNEȘTI">
+                        <a href="objsPages/danesti/ionMitican.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/danesti/ionMitican.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Casa părintească a lui Ion Mitican</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Dănești, între satele Emil Racoviță și Bereasa</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv DĂNEȘTI">
+                        <a href="objsPages/danesti/racovita.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/danesti/racovita.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Casa Memorială Emil Racoviță</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Dănești, sat Emil Racoviță</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+
+                    <!-- DOBROVĂȚ -->
+                    <div class="filterDiv DOBROVĂȚ">
+                        <a href="objsPages/dobrovat/bisNasMD.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/dobrovat/bisNasMD.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Nașterea Maicii Domnului</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Dobrovăț, sat Dobrovăț - Ruși</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv DOBROVĂȚ">
+                        <a href="objsPages/dobrovat/eroi.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/dobrovat/eroi.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Monument al eroilor din Dobrovăț-Moldoveni</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Dobrovăț, sat Dobrovăț-Moldoveni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv DOBROVĂȚ">
+                        <a href="objsPages/dobrovat/manastireaDobrovat.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/dobrovat/manastireaDobrovat.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Ansamblul Mănăstirii Dobrovăț</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Dobrovăț, sat Dobrovăț</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv DOBROVĂȚ">
+                        <a href="objsPages/dobrovat/pahomie.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/dobrovat/pahomie.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica de lemn Pahomie/ Sf. Pantelimon</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Dobrovăț, sat Dobrovăț</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv DOBROVĂȚ">
+                        <a href="objsPages/dobrovat/racovita.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/dobrovat/racovita.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Casa Racoviță</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Dobrovăț, sat Dobrovăț</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv DOBROVĂȚ">
+                        <a href="objsPages/dobrovat/sfPantelimon.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/dobrovat/sfPantelimon.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Pantelimon</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Dobrovăț, sat Pantelimon, Dobrovăț - Moldoveni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- GOLĂIEȘTI -->
+                    <div class="filterDiv GOLĂIEȘTI">
+                        <a href="objsPages/golaiesti/bisAdMD.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/golaiesti/bisAdMD.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Adormirea Maicii Domnului</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Golăiești, sat Grădinari</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv GOLĂIEȘTI">
+                        <a href="objsPages/golaiesti/bisNasMD.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/golaiesti/bisNasMD.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Nașterea Maicii Domnului</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Golăiești, sat Petrești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="filterDiv GOLĂIEȘTI">
+                        <a href="objsPages/golaiesti/bisSfImp.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/golaiesti/bisSfImp.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Împărați Constantin și Elena</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Golăiești, sat Medeleni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="filterDiv GOLĂIEȘTI">
+                        <a href="objsPages/golaiesti/bissfNic.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/golaiesti/bissfNic.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Nicolae</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Golăiești, sat Cilibiu</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="filterDiv GOLĂIEȘTI">
+                        <a href="objsPages/golaiesti/bisSfParasc.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/golaiesti/bisSfParasc.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Parascheva</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Golăiești, sat Golăiești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="filterDiv GOLĂIEȘTI">
+                        <a href="objsPages/golaiesti/bisVeche.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/golaiesti/bisVeche.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Veche din satul Cotu lui Ivan</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Golăiești, sat Cotu lui Ivan</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="filterDiv GOLĂIEȘTI">
+                        <a href="objsPages/golaiesti/bisVecheMedeleni.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/golaiesti/bisVecheMedeleni.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Veche din Medeleni</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Golăiești, sat Medeleni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="filterDiv GOLĂIEȘTI">
+                        <a href="objsPages/golaiesti/muzeu.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/golaiesti/muzeu.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Punctul muzeal „Ionel Teodoreanu”</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Golăiești, sat Golăiești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="filterDiv GOLĂIEȘTI">
+                        <a href="objsPages/golaiesti/scoala.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/golaiesti/scoala.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Școala de la Medeleni/ Conacul de la Medeleni</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Golăiești, sat Medeleni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <!-- NEGREȘTI -->
+                    <div class="filterDiv NEGREȘTI">
+                        <a href="objsPages/negresti/bidNic.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/negresti/bidNic.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Nicolae din Căzănești</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Negrești, sat Căzănești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv NEGREȘTI">
+                        <a href="objsPages/negresti/bisArch.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/negresti/bisArch.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Arh. Mihail si Gavriil</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Negrești, sat Poiana</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv NEGREȘTI">
+                        <a href="objsPages/negresti/bisDimi.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/negresti/bisDimi.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Dimitrie</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Negrești, sat Valea Mare</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv NEGREȘTI">
+                        <a href="objsPages/negresti/bisDuh.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/negresti/bisDuh.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Parohia Negrești I - Biserica Pogorârea Sfântului Duh</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Negrești, sat Negrești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv NEGREȘTI">
+                        <a href="objsPages/negresti/bisSfTReime.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/negresti/bisSfTReime.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sfânta Treime din Parpanița</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Negrești, sat Parpanița</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv NEGREȘTI">
+                        <a href="objsPages/negresti/bisVoievozi.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/negresti/bisVoievozi.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Parohia Negrești II - Biserica de lemn Sfinții Voievozi</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Negrești, sat Negrești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv NEGREȘTI">
+                        <a href="objsPages/negresti/muzeu.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/negresti/muzeu.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Centrul Socio-Cultural cu muzeu și bibliotecă</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Negrești, sat Parpanița</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- PRISĂCANI -->
+                    <div class="filterDiv PRISĂCANI">
+                        <a href="objsPages/prisacani/bisSfArh.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/prisacani/bisSfArch.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica „Sfinții Arhangheli Mihail și Gavriil”</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Prisăcani, sat Prisăcani</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv PRISĂCANI">
+                        <a href="objsPages/prisacani/bissfNic.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/prisacani/bissfNic.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica din vălătuci Sf. Nicolae</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Prisăcani, sat Moreni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv PRISĂCANI">
+                        <a href="objsPages/prisacani/bisSfVoievozi.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/prisacani/bisSfVoievozi.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sfinții Voievozi</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Prisăcani, sat Prisăcani</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv PRISĂCANI">
+                        <a href="objsPages/prisacani/muzeu.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/prisacani/muzeu.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Muzeul „Dorul satului”</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Prisăcani, sat Satu Nou</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- REBRICEA -->
+                    <div class="filterDiv REBRICEA">
+                        <a href="objsPages/rebricea/bisSfImp.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/rebricea/bisSfImp.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Ierarh Nectarie</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Rebricea, sat Draxeni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv REBRICEA">
+                        <a href="objsPages/rebricea/gara.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/rebricea/gara.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Gara Rebricea</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Rebricea</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv REBRICEA">
+                        <a href="objsPages/rebricea/bisAdMD.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/rebricea/bisAdMD.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Adormirea Maicii Domnului</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Rebricea, sat Tatomirești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv REBRICEA">
+                        <a href="objsPages/rebricea/bissfNic.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/rebricea/bissfNic.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Nicolae</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Rebricea, sat Draxeni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv REBRICEA">
+                        <a href="objsPages/rebricea/conac.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/rebricea/conac.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Conacul Pangrati Ermil</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Rebricea, sat Rebricea</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- TĂCUTA -->
+                    <div class="filterDiv TĂCUTA">
+                        <a href="objsPages/tacuta/bisAdMD.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/tacuta/bisAdMD.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Adormirea Maicii Domnului</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Tăcuta, sat Dumasca</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv TĂCUTA">
+                        <a href="objsPages/tacuta/bisArch.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/tacuta/bisArch.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Arh. Mihail și Gavril</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Tăcuta, sat Mircești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv TĂCUTA">
+                        <a href="objsPages/tacuta/bisGheo.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/tacuta/bisGheo.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Gheorghe</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Tăcuta, sat Tăcuta</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv TĂCUTA">
+                        <a href="objsPages/tacuta/bisSfImp.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/tacuta/bisSfImp.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Împărați Constantin și Elena</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Tăcuta, sat Mircești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv TĂCUTA">
+                        <a href="objsPages/tacuta/bissfNic.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/tacuta/bissfNic.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Nicolae</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Tăcuta, sat Protopopești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv TĂCUTA">
+                        <a href="objsPages/tacuta/conac.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/tacuta/conac.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Conacul Sturdza din Tăcuta</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Tăcuta, sat Tăcuta</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- ȚUȚOTA -->
+                    <div class="filterDiv ȚUȚOTA">
+                        <a href="objsPages/tutora/bisNasMD.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/tutora/bisNasMD.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Nașterea Maicii Domnului</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Țuțora, sat Țuțora</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv ȚUȚOTA">
+                        <a href="objsPages/tutora/bisSfArch.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/tutora/bisSfArch.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Arh. Mihail și Gavril</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Țuțora, sat Oprișeni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv ȚUȚOTA">
+                        <a href="objsPages/tutora/bissfNicNou.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/tutora/bissfNicNou.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Nicolae Nou</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Țuțora, sat Chiperești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv ȚUȚOTA">
+                        <a href="objsPages/tutora/bissfNicVechi.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/tutora/bisSfNicVechi.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Nicolae Vechi</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Țuțora, sat Chiperești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- UNGHENI -->
+                    <div class="filterDiv UNGHENI">
+                        <a href="objsPages/ungheni/bisSfDumi.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/ungheni/bisSfDumi.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Dumitru</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Ungheni, sat Coada Stâncii</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv UNGHENI">
+                        <a href="objsPages/ungheni/bisSfilie.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/ungheni/bisSfilie.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Ilie</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Ungheni, sat Ungheni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv UNGHENI">
+                        <a href="objsPages/ungheni/bissfNicBosia.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/ungheni/bissfNicBosia.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Nicolae</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Ungheni, sat Bosia</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv UNGHENI">
+                        <a href="objsPages/ungheni/bissfNicManzesti.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/ungheni/bissfNicManzesti.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Biserica Sf. Nicolae</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Ungheni, sat Mânzătești</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv UNGHENI">
+                        <a href="objsPages/ungheni/podulEiffel.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <img src="../../globalImages/scm/ungheni/podulEiffel.png" class="image">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Podul Eiffel de la Ungheni</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Ungheni, sat Ungheni</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="filterDiv UNGHENI">
+                        <a href="objsPages/ungheni/pudulDeFlori.html">
+                            <div class="cardWrapper">
+                                <div class="card">
+                                    <img src="../../globalIcons/noImage.jpg" class="image">
+                                    <img src="../../globalImages/logo.png" alt="Avatar" class="qr">
+                                    <div class="container">
+                                        <h4 style="margin-top: 7%;"><b>Podul de Flori</b></h4>
+                                        <div class="vertical">
+                                            <p style="margin-left: 6%; margin-top: 8%;">Ungheni, malurile râului Prut</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
-                <!-- end col -->
             </div>
-            <!-- end row -->
+            <!-- end col -->
         </div>
-        <!-- end container -->
+        <!-- end row -->
+    </div>
+    <!-- end container -->
     </div>
     <!-- end section -->
     </div>
@@ -359,30 +1747,11 @@
     <script src="js/custom.js"></script>
 
     <script>
-        open = false;
-        function openNav() {
-            if (this.open == false) {
-                document.getElementById("mySidebar").style.width = "120px";
-                document.getElementById("main").style.marginLeft = "120px";
-                open = true;
-            } else {
-                document.getElementById("mySidebar").style.width = "0";
-                document.getElementById("main").style.marginLeft = "0";
-                open = false;
-            }
-
-        }
-
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-            document.getElementById("main").style.marginLeft = "0";
-            open = false;
-        }
-
-        filterSelection("all")
         function filterSelection(c) {
             var x, i;
             x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
             for (i = 0; i < x.length; i++) {
                 w3RemoveClass(x[i], "show");
                 if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
@@ -390,15 +1759,19 @@
             closeNav();
         }
 
+        // Show filtered elements
         function w3AddClass(element, name) {
             var i, arr1, arr2;
             arr1 = element.className.split(" ");
             arr2 = name.split(" ");
             for (i = 0; i < arr2.length; i++) {
-                if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
             }
         }
 
+        // Hide elements that are not selected
         function w3RemoveClass(element, name) {
             var i, arr1, arr2;
             arr1 = element.className.split(" ");
@@ -411,7 +1784,7 @@
             element.className = arr1.join(" ");
         }
 
-        // Add active class to the current button (highlight it)
+        // Add active class to the current control button (highlight it)
         var btnContainer = document.getElementById("myBtnContainer");
         var btns = btnContainer.getElementsByClassName("btn");
         for (var i = 0; i < btns.length; i++) {
@@ -421,8 +1794,26 @@
                 this.className += " active";
             });
         }
+
+        open = false;
+        function openNav() {
+            if (this.open == false) {
+                document.getElementById("myBtnContainer").style.width = "120px";
+                document.getElementById("main").style.marginLeft = "120px";
+                open = true;
+            } else {
+                document.getElementById("myBtnContainer").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                open = false;
+            }
+
+        }
+
+        function closeNav() {
+            document.getElementById("myBtnContainer").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            open = false;
+        }
     </script>
-
 </body>
-
 </html>
