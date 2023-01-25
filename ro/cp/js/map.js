@@ -2,7 +2,7 @@
     MAP -->
     =============================================== */
     
-    var locations=[ ['<div class="infobox"><h3 class="title"><a href="#">OUR USA OFFICE</a></h3><span>NEW YORK CITY 2045 / 65</span><span>+90 555 666 77 88</span></div>',
+    var Locațies=[ ['<div class="infobox"><h3 class="title"><a href="#">OUR USA OFFICE</a></h3><span>NEW YORK CITY 2045 / 65</span><span>+90 555 666 77 88</span></div>',
     52.370216,
     4.895168,
     2]];
@@ -18,15 +18,15 @@
     var marker,
     i;
     for (i=0;
-    i < locations.length;
+    i < Locațies.length;
     i++) {
         marker=new google.maps.Marker( {
-            position: new google.maps.LatLng(locations[i][1], locations[i][2]), map: map, icon: 'images/loaders/loader-realestate.gif'
+            position: new google.maps.LatLng(Locațies[i][1], Locațies[i][2]), map: map, icon: 'images/loaders/loader-realestate.gif'
         }
         );
         google.maps.event.addListener(marker, 'click', (function(marker, i) {
             return function() {
-                infowindow.setContent(locations[i][0]);
+                infowindow.setContent(Locațies[i][0]);
                 infowindow.open(map, marker);
             }
         }
