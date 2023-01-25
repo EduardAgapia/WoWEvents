@@ -3123,11 +3123,11 @@
 							return item === current ? hash : null;
 						}).join();
 
-					if (!hash || window.Locație.hash.slice(1) === hash) {
+					if (!hash || window.Location.hash.slice(1) === hash) {
 						return;
 					}
 
-					window.Locație.hash = hash;
+					window.Location.hash = hash;
 				}
 			}, this)
 		};
@@ -3140,7 +3140,7 @@
 
 		// register event listener for hash navigation
 		$(window).on('hashchange.owl.navigation', $.proxy(function(e) {
-			var hash = window.Locație.hash.substring(1),
+			var hash = window.Location.hash.substring(1),
 				items = this._core.$stage.children(),
 				position = this._hashes[hash] && items.index(this._hashes[hash]);
 

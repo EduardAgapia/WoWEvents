@@ -234,10 +234,10 @@
 .icon-download:before {
   content: "\e069";
 }
-.icon-Locație:before {
+.icon-Location:before {
   content: "\e070";
 }
-.icon-Locație-2:before {
+.icon-Location-2:before {
   content: "\e071";
 }
 .icon-map:before {
@@ -1041,10 +1041,10 @@
 .icon-list:before {
   content: "\e9d0";
 }
-.icon-Locație-pin:before {
+.icon-Location-pin:before {
   content: "\e9d1";
 }
-.icon-Locație2:before {
+.icon-Location2:before {
   content: "\e9d2";
 }
 .icon-lock-open:before {

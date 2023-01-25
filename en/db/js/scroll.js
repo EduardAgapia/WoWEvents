@@ -273,16 +273,16 @@
 	 * @param {Number} offset Number of pixels by which to offset scroll
 	 * @returns {Number}
 	 */
-	var getEndLocație = function ( anchor, headerHeight, offset ) {
-		var Locație = 0;
+	var getEndLocation = function ( anchor, headerHeight, offset ) {
+		var Location = 0;
 		if (anchor.offsetParent) {
 			do {
-				Locație += anchor.offsetTop;
+				Location += anchor.offsetTop;
 				anchor = anchor.offsetParent;
 			} while (anchor);
 		}
-		Locație = Math.max(Locație - headerHeight - offset, 0);
-		return Math.min(Locație, getDocumentHeight() - getViewportHeight());
+		Location = Math.max(Location - headerHeight - offset, 0);
+		return Math.min(Location, getDocumentHeight() - getViewportHeight());
 	};
 
 	/**
@@ -331,7 +331,7 @@
 	 * Bring the anchored element into focus
 	 * @private
 	 */
-	var adjustFocus = function ( anchor, endLocație, isNum ) {
+	var adjustFocus = function ( anchor, endLocation, isNum ) {
 
 		// Don't run if scrolling to a number on the page
 		if ( isNum ) return;
@@ -343,7 +343,7 @@
 			anchor.focus();
 			anchor.style.outline = 'none';
 		}
-		root.scrollTo( 0 , endLocație );
+		root.scrollTo( 0 , endLocation );
 
 	};
 
@@ -364,7 +364,7 @@
 		var isNum = Object.prototype.toString.call( anchor ) === '[object Number]' ? true : false;
 		var anchorElem = isNum || !anchor.tagName ? null : anchor;
 		if ( !isNum && !anchorElem ) return;
-		var startLocație = root.pageYOffset; // Current Locație on the page
+		var startLocation = root.pageYOffset; // Current Location on the page
 		if ( animateSettings.selectorHeader && !fixedHeader ) {
 			// Get the fixed header if not already set
 			fixedHeader = document.querySelector( animateSettings.selectorHeader );
@@ -373,8 +373,8 @@
 			// Get the height of a fixed header if one exists and not already set
 			headerHeight = getHeaderHeight( fixedHeader );
 		}
-		var endLocație = isNum ? anchor : getEndLocație( anchorElem, headerHeight, parseInt(animateSettings.offset, 10) ); // Locație to scroll to
-		var distance = endLocație - startLocație; // distance to travel
+		var endLocation = isNum ? anchor : getEndLocation( anchorElem, headerHeight, parseInt(animateSettings.offset, 10) ); // Location to scroll to
+		var distance = endLocation - startLocation; // distance to travel
 		var documentHeight = getDocumentHeight();
 		var timeLapsed = 0;
 		var percentage, position;
@@ -383,18 +383,18 @@
 		 * Stop the scroll animation when it reaches its target (or the bottom/top of page)
 		 * @private
 		 * @param {Number} position Current position on the page
-		 * @param {Number} endLocație Scroll to Locație
+		 * @param {Number} endLocation Scroll to Location
 		 * @param {Number} animationInterval How much to scroll on this loop
 		 */
-		var stopAnimateScroll = function ( position, endLocație, animationInterval ) {
-			var currentLocație = root.pageYOffset;
-			if ( position == endLocație || currentLocație == endLocație || ( (root.innerHeight + currentLocație) >= documentHeight ) ) {
+		var stopAnimateScroll = function ( position, endLocation, animationInterval ) {
+			var currentLocation = root.pageYOffset;
+			if ( position == endLocation || currentLocation == endLocation || ( (root.innerHeight + currentLocation) >= documentHeight ) ) {
 
 				// Clear the animation timer
 				clearInterval(animationInterval);
 
 				// Bring the anchored element into focus
-				adjustFocus( anchor, endLocație, isNum );
+				adjustFocus( anchor, endLocation, isNum );
 
 				// Run callback after animation complete
 				animateSettings.callback( anchor, toggle );
@@ -410,9 +410,9 @@
 			timeLapsed += 16;
 			percentage = ( timeLapsed / parseInt(animateSettings.speed, 10) );
 			percentage = ( percentage > 1 ) ? 1 : percentage;
-			position = startLocație + ( distance * easingPattern(animateSettings.easing, percentage) );
+			position = startLocation + ( distance * easingPattern(animateSettings.easing, percentage) );
 			root.scrollTo( 0, Math.floor(position) );
-			stopAnimateScroll(position, endLocație, animationInterval);
+			stopAnimateScroll(position, endLocation, animationInterval);
 		};
 
 		/**
@@ -444,7 +444,7 @@
 	var hashChangeHandler = function (event) {
 
 		// Get hash from URL
-		var hash = root.Locație.hash;
+		var hash = root.Location.hash;
 
 		// Only run if there's an anchor element to scroll to
 		if ( !anchor ) return;
@@ -475,7 +475,7 @@
 		if ( !toggle || toggle.tagName.toLowerCase() !== 'a' ) return;
 
 		// Only run if link is an anchor and points to the current page
-		if ( toggle.hostname !== root.Locație.hostname || toggle.pathname !== root.Locație.pathname || !/#/.test(toggle.href) ) return;
+		if ( toggle.hostname !== root.Location.hostname || toggle.pathname !== root.Location.pathname || !/#/.test(toggle.href) ) return;
 
 		// Get the sanitized hash
 		var hash = escapeCharacters( toggle.hash );
@@ -496,10 +496,10 @@
 
 			// If no hash change event will happen, fire manually
 			// Otherwise, update the hash
-			if ( root.Locație.hash.substring(1) === id ) {
+			if ( root.Location.hash.substring(1) === id ) {
 				hashChangeHandler();
 			} else {
-				root.Locație.hash = id;
+				root.Location.hash = id;
 			}
 
 			return;
@@ -515,7 +515,7 @@
 		anchor.id = '';
 
 		// If no hash change event will happen, fire manually
-		if ( toggle.hash === root.Locație.hash ) {
+		if ( toggle.hash === root.Location.hash ) {
 			event.preventDefault();
 			hashChangeHandler();
 		}
