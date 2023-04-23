@@ -66,9 +66,11 @@ body{
 }
 
 h4 {
-  font-size: 4vw !important
+  font-size: 3.8vw !important;
+  font-size: 1.9vh !important;
 }
 
 p {
-  font-size: 3.4vw !important
+  font-size: 3.4vw !important;
+  font-size: 1.5vh !important;
 }
