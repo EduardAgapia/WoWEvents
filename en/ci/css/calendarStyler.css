@@ -57,8 +57,19 @@ body{
   color: #272323;
 }
 
+
 .vertical {
   margin-left: 2%;
   border-left: 3px solid rgb(64, 117, 64);
   height: 5%;
+  margin-bottom:-2%;
+  margin-right: -6%;
+}
+
+h4 {
+  font-size: 100% !important
+}
+
+p {
+  font-size: 85% !important
 }
